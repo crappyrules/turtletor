@@ -1,17 +1,17 @@
 FROM debian:jessie
 
-LABEL maintainer "opsxcq@strm.sh"
+LABEL maintainer "crappyrules@protonmail.com"
 
 # Base packages
 RUN apt-get update && \
     apt-get -y install \
-    nginx \  
+    nginx \
     tor torsocks ntpdate
 
 # Compile shallot
 ADD ./shallot /shallot
 RUN apt-get -y install \
-    build-essential \ 
+    build-essential \
     libssl-dev && \
     cd /shallot && \
     ./configure && \
@@ -35,7 +35,7 @@ ADD ./main.sh /main.sh
 # Tor Config
 ADD ./torrc /etc/tor/torrc
 
-# Add nginx default configuration 
+# Add nginx default configuration
 ADD ./nginx.conf /etc/nginx/nginx.conf
 
 # Configuration files and data output folder
@@ -44,4 +44,3 @@ WORKDIR /web
 
 ENTRYPOINT ["/main.sh"]
 CMD ["serve"]
-
