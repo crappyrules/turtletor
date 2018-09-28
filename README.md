@@ -64,7 +64,7 @@ docker build -t crappyrules/turtletor .
 
 ## Run
 
-docker run -d --restart=always --name hiddensite \
+docker run -d --restart=always --name turtletor \
        -v $(pwd)/web:/web crappyrules/turtletor
 
 ## Shell
