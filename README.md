@@ -15,10 +15,10 @@ docker run -it --rm -v $(pwd)/web:/web \
 ```
 
 
-Create an container named 'hiddensite' to serve your generated hidden service
+Create an container named 'turtletor' to serve your generated hidden service
 
 ```sh
-docker run -d --restart=always --name hiddensite -v $(pwd)/web:/web \
+docker run -d --restart=always --name turtletor -v $(pwd)/web:/web \
        crappyrules/turtletor
 ```
 
@@ -44,7 +44,7 @@ $docker run -it --rm -v $(pwd)/web:/web crappyrules/turtletor generate ^trtl
 Now we have our skeleton generated, we can run the container with:
 
 ```sh
-docker run -d --restart=always --name hiddensite \
+docker run -d --restart=always --name turtletor \
        -v $(pwd)/web:/web crappyrules/turtletor
 ```
 
